@@ -12,8 +12,11 @@ This architecture is described at the following links:
 Single-Tier (or Unified Ingress) Diagram:
 https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/deployment-topologies/#single-tier-topology
 
-Citrix CIC (Citrix Ingress Controller)
+This Single-Tier design is discussed in the larger Citrix Validated Reference Design here:
+https://docs.citrix.com/en-us/advanced-concepts/design-guides/cloud-native-networking-openshift-validated-reference-design.html
 
+Citrix CIC (Citrix Ingress Controller) GitHub repository is the source of the CIC files:
+https://github.com/citrix/citrix-k8s-ingress-controller
 
 The files are listed here for your convenience. These are listed in the order you should deploy them.
 5 files are part of this deployment. 
