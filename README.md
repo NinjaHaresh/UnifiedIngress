@@ -1,6 +1,11 @@
 # UnifiedIngress
 Config files for my video demo of Unified Ingress Architecture
 
+You can clone these files easily by going to your home folder and typing:
+> git clone https://github.com/NinjaHaresh/UnifiedIngress 
+
+A new sub-folder will be created called UnifedIngress with the files.
+
 This is the repository of Kubernetes config files to deploy the Citrix Unified Gateway configuration shown in my demo on youtube located here: https://youtu.be/pUP-VEM8MlM
 
 This architecture is described at the following links:
