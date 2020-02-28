@@ -28,20 +28,23 @@ The files are listed here for your convenience. These are listed in the order yo
 5 files are part of this deployment. 
 Each file can be deployed using :
 > #### kubectl apply -f filename.yaml -n namespace
-
-- app.yaml
-- service.yaml
-- rbac.yaml
-- cic.yaml
-- ingress.yaml
+Remember these files have some variables you have to customize for your environment. I've written the needed changes below next to each filename.
+                    
+File Name  | Changes needed
+------------- | -------------
+app.yaml  | no changes, but you can change # of replicas if you like
+service.yaml  | no changes needed 
+rbac.yaml   |two fields for 'namespace' must match your intended namespace) Do not change other fields
+cic.yaml  |   Change 172.16.16.74 to your NSIP, Change "nsroot" to user, change 2nd "nsroot" to password of NetScaler VPX
+ingress.yaml |change 172.16.16.75 to your desired VIP IP
 
 Before deploying the ingress.yaml, I would suggest you open an SSH connection to the external VPX and run the following to tail the ns.log. This will show you all the commands the CIC shoots to the VPX
 
-
->#### shell
->#### cd /var/log
->#### tail -f ns.log
-
+```On NetScaler:
+shell
+cd /var/log
+tail -f ns.log
+```
 Now go ahead and deploy the ingress. Follow instructions in the docs for this architecture to see the results. View my 14 min video to see this in action which should answer many of your questions.
 
 I'll add more here later on what you should expect after deploying each file above.
