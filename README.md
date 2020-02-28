@@ -30,7 +30,7 @@ Each file can be deployed using :
 > #### kubectl apply -f filename.yaml -n namespace
 Remember these files have some variables you have to customize for your environment. I've written the needed changes below next to each filename.
                     
-File Name  | Changes needed
+File Name  | Changes you need to make before deploying this
 ------------- | -------------
 app.yaml      | no changes, but you can change # of replicas if you like
 service.yaml  | no changes needed 
