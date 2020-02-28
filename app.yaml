@@ -1,16 +1,21 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: apache
   name: apache-webserver
 spec:
   replicas: 4
+  selector:
+    matchLabels:
+      app: apache
   template:
     metadata:
       labels:
         app: apache
     spec:
       containers:
-        - name: apache
-          image: httpd
-          ports:
-            - containerPort: 80
+      - image: httpd
+        name: apache
+        ports:
+        - containerPort: 80
