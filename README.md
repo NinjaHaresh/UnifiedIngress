@@ -1,12 +1,18 @@
-# UnifiedIngress
-Config files for my video demo of Unified Ingress Architecture
+
+## Welcome to Haresh's Repository for the Unified Ingress (or Single-Tier) project!
+Hi, my name is Haresh Advani. This is the repository for the config files for my video demo of Unified Ingress Architecture
+
+Latest update - corrected files to work for K8s v1.16 & 1.17
 
 You can clone these files easily by going to your home folder and typing:
-> git clone https://github.com/NinjaHaresh/UnifiedIngress 
+>#### git clone https://github.com/NinjaHaresh/UnifiedIngress 
 
-A new sub-folder will be created called UnifedIngress with the files.
+A new sub-folder will be created called UnifedIngress with the files. If you already have this folder, please either rename the old folder, or you can use this command to clone to a different folder
 
-This is the repository of Kubernetes config files to deploy the Citrix Unified Gateway configuration shown in my demo on youtube located here: https://youtu.be/pUP-VEM8MlM
+>#### git clone https://github.com/NinjaHaresh/UnifiedIngress  UnifiedIngressFolder2
+
+This is the repository of Kubernetes config files to deploy the Citrix Unified Gateway configuration shown in my demo on youtube located here: 
+#### https://youtu.be/pUP-VEM8MlM  (14 min demo video)
 
 This architecture is described at the following links:
 Single-Tier (or Unified Ingress) Diagram:
@@ -20,27 +26,23 @@ https://github.com/citrix/citrix-k8s-ingress-controller
 
 The files are listed here for your convenience. These are listed in the order you should deploy them.
 5 files are part of this deployment. 
-Each file can be deployed using kubectl apply -f <filename> -n namespace
+Each file can be deployed using :
+> #### kubectl apply -f filename.yaml -n namespace
 
-app.yaml
-  
-service.yaml
-
-rbac.yaml
-
-cic.yaml
-
-ingress.yaml
+- app.yaml
+- service.yaml
+- rbac.yaml
+- cic.yaml
+- ingress.yaml
 
 Before deploying the ingress.yaml, I would suggest you open an SSH connection to the external VPX and run the following to tail the ns.log. This will show you all the commands the CIC shoots to the VPX
 
 
-shell
-
-cd /var/log
-
-tail -f ns.log
+>#### shell
+>#### cd /var/log
+>#### tail -f ns.log
 
 Now go ahead and deploy the ingress. Follow instructions in the docs for this architecture to see the results. View my 14 min video to see this in action which should answer many of your questions.
 
 I'll add more here later on what you should expect after deploying each file above.
+
