@@ -32,10 +32,10 @@ Remember these files have some variables you have to customize for your environm
                     
 File Name  | Changes needed
 ------------- | -------------
-app.yaml  | no changes, but you can change # of replicas if you like
+app.yaml      | no changes, but you can change # of replicas if you like
 service.yaml  | no changes needed 
-rbac.yaml   |two fields for 'namespace' must match your intended namespace) Do not change other fields
-cic.yaml  |   Change 172.16.16.74 to your NSIP, Change "nsroot" to user, change 2nd "nsroot" to password of NetScaler VPX
+rbac.yaml     | two fields for 'namespace' must match your intended namespace.
+cic.yaml      | change 172.16.16.74 to your NSIP, Change "nsroot" to user, change 2nd "nsroot" to password of NetScaler VPX
 ingress.yaml |change 172.16.16.75 to your desired VIP IP
 
 Before deploying the ingress.yaml, I would suggest you open an SSH connection to the external VPX and run the following to tail the ns.log. This will show you all the commands the CIC shoots to the VPX
