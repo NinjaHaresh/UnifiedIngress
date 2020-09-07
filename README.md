@@ -39,7 +39,7 @@ rbac.yaml     | two fields for 'namespace' must match your intended namespace. T
 cic.yaml      | change 172.16.16.74 to your NSIP (NetScaler's Mgmt IP or NetScaler's SNIP with mgmt enabled, if using an HA Pair), Change "nsroot" to your NetScaler admin username but keep it in double quotes, change 2nd "nsroot" to the NetScaler admin password of NetScaler VPX but keep it in double quotes. Note: passwords should be kept in K8s secrets, but this is just a lab so I've kept it simple here.
 ingress.yaml |change 172.16.16.75 to your desired VIP IP in your lab network. In this simple beginner lab, the IP is hard coded, but in real use, we use the Citrix IPAM controller to issue an IP from a pre-determined pool of VIP IPs.
 
-To Deploy these files, this is the order in which I deployed them:
+To deploy these files, you can run these commands:
 
 ```on Master node:
 kubectl create ns unified
