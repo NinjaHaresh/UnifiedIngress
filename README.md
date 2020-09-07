@@ -60,7 +60,7 @@ Now go ahead and deploy the ingress.
 ```on Master node:
 kubectl -n unified create -f ingress.yaml
 ```
-Immediately keep an eye on your tail on the NetScaler CLI to see the commands being shot into the NetScaler by the CIC. 
+Immediately keep an eye on the tail -f of the /var/log/ns.log on the NetScaler CLI to see the commands being shot into the NetScaler by the CIC. 
 
 View my 14 min video to see this in action which should answer many of your questions.
 I'll add more here later on what you should expect after deploying each file above.
