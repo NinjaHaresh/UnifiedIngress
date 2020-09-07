@@ -1,8 +1,8 @@
 
-## Welcome to Haresh's Repository for the Unified Ingress (or Single-Tier) project!
+## Welcome to Haresh's Repository for the Unified Ingress (or Single-Tier ADC) project!
 Hi, my name is Haresh Advani. This is the repository for the config files for my video demo of Unified Ingress Architecture
 
-Latest update - corrected files to work for K8s v1.16 & 1.17
+Update - corrected files to work for K8s v1.16 & 1.17
 
 You can clone these files easily by going to your home folder and typing:
 >#### git clone https://github.com/NinjaHaresh/UnifiedIngress 
