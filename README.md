@@ -2,16 +2,17 @@
 ## Welcome to Haresh's Repository for the Unified Ingress (or Single-Tier ADC) project!
 Hi, my name is Haresh Advani. This is the repository for the config files for my video demo of Unified Ingress Architecture
 
-Update - corrected files to work for K8s v1.16 & 1.17
+Update 2020-02 - corrected files to work for K8s v1.16 & 1.17
 
-You can clone these files easily by going to your home folder and typing:
+You can clone these files easily by going to a terminal on your linux master node, cd to your home folder and type:
 >#### git clone https://github.com/NinjaHaresh/UnifiedIngress 
 
 A new sub-folder will be created called UnifedIngress with the files. If you already have this folder, please either rename the old folder, or you can use this command to clone to a different folder
 
 >#### git clone https://github.com/NinjaHaresh/UnifiedIngress  UnifiedIngressFolder2
 
-This is the repository of Kubernetes config files to deploy the Citrix Unified Gateway configuration shown in my demo on youtube located here: 
+This is the repository of Kubernetes config files to deploy the Citrix Unified Gateway configuration shown in my demo on youtube located here:
+This YouTube video is part of my Kubernetes101 YouTube channel (Please subscribe if you like my content & smash the 'like' button)
 #### https://youtu.be/pUP-VEM8MlM  (14 min demo video)
 
 This architecture is described at the following links:
@@ -34,7 +35,7 @@ File Name  | Changes you need to make before deploying this
 ------------- | -------------
 app.yaml      | no changes, but you can change # of replicas if you like
 service.yaml  | no changes needed 
-rbac.yaml     | two fields for 'namespace' must match your intended namespace.
+rbac.yaml     | two fields for 'namespace' must match your intended namespace. They are coded for a namespace called ####unified
 cic.yaml      | change 172.16.16.74 to your NSIP, Change "nsroot" to your NetScaler admin user but keep it in double quotes, change 2nd "nsroot" to your NetScaler admin password of NetScaler VPX but keep it in double quotes
 ingress.yaml |change 172.16.16.75 to your desired VIP IP in your lab network
 
