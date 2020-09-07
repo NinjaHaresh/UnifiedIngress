@@ -35,9 +35,19 @@ File Name  | Changes you need to make before deploying this
 ------------- | -------------
 app.yaml      | no changes, but you can change # of replicas if you like
 service.yaml  | no changes needed 
-rbac.yaml     | two fields for 'namespace' must match your intended namespace. They are coded for a namespace called ####unified
-cic.yaml      | change 172.16.16.74 to your NSIP, Change "nsroot" to your NetScaler admin user but keep it in double quotes, change 2nd "nsroot" to your NetScaler admin password of NetScaler VPX but keep it in double quotes
-ingress.yaml |change 172.16.16.75 to your desired VIP IP in your lab network
+rbac.yaml     | two fields for 'namespace' must match your intended namespace. They are coded for a namespace called unified
+cic.yaml      | change 172.16.16.74 to your NSIP (NetScaler's Mgmt IP or NetScaler's SNIP with mgmt enabled, if using an HA Pair), Change "nsroot" to your NetScaler admin username but keep it in double quotes, change 2nd "nsroot" to the NetScaler admin password of NetScaler VPX but keep it in double quotes. Note: passwords should be kept in K8s secrets, but this is just a lab so I've kept it simple here.
+ingress.yaml |change 172.16.16.75 to your desired VIP IP in your lab network. In this simple beginner lab, the IP is hard coded, but in real use, we use the Citrix IPAM controller to issue an IP from a pre-determined pool of VIP IPs.
+
+To Deploy these files, this is the order in which I deployed them:
+
+```on Master node:
+kubectl create ns unified
+kubectl -n unified create -f rbac.yaml  #note the namespace within this file must match the namespace we just created
+kubectl -n unified create -f app.yaml
+kubectl -n unified create -f service.yaml
+kubectl -n unified create -f cic.yaml
+```
 
 Before deploying the ingress.yaml, I would suggest you open an SSH connection to the external VPX and run the following to tail the ns.log. This will show you all the commands the CIC shoots to the VPX
 
@@ -46,7 +56,11 @@ shell
 cd /var/log
 tail -f ns.log
 ```
-Now go ahead and deploy the ingress. Follow instructions in the docs for this architecture to see the results. View my 14 min video to see this in action which should answer many of your questions.
+Now go ahead and deploy the ingress. 
+```on Master node:
+kubectl -n unified create -f ingress.yaml
+```
+Immediately keep an eye on your tail on the NetScaler CLI to see the commands being shot into the NetScaler by the CIC. 
 
+View my 14 min video to see this in action which should answer many of your questions.
 I'll add more here later on what you should expect after deploying each file above.
-
